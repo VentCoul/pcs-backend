@@ -1,0 +1,9 @@
+aiogram
+pydantic-settings
+aiohttp
+aiosqlite
+sqlalchemy
+matplotlib
+pandas
+google-generativeai
+python-dotenv
