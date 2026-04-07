@@ -1,4 +1,4 @@
-from aiogram import Router, types
+from aiogram import Router, types, F
 from aiogram.filters import CommandStart
 from core.database.models import async_session, User
 from sqlalchemy import select
@@ -36,7 +36,7 @@ async def cmd_start(message: types.Message):
         parse_mode="HTML"
     )
 
-@router.callback_query(lambda c: c.data == "main_menu")
+@router.callback_query(F.data == "main_menu")
 async def process_main_menu(callback: types.CallbackQuery):
     await callback.message.edit_text(
         "🦾 <b>Головне меню PCS</b>\nОберіть потрібний розділ аналітики:",
